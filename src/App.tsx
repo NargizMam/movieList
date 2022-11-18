@@ -9,9 +9,11 @@ function App() {
 
   const openFirstPage = () => {
     setShow1(true);
+    setShow2(false)
   };
   const openSecondPage = () => {
     setShow2(true);
+    setShow1(false);
   };
 
   return (

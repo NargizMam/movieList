@@ -1,4 +1,4 @@
-import React, {Component} from 'react';
+import React from 'react';
 import {Movie} from "../../types";
 import AddMovie from "../../components/AddMovie/AddMovie";
 import OneMovie from "../../components/Movie/OneMovie";
@@ -35,7 +35,7 @@ class WatchList extends React.Component<{},  State> {
             if(id === movie.id){
                 this.setState(prev => ({...prev, movie: name}));
 
-        };
+        }
         this.setState(prev => ({...prev,  editName}))
     })};
     deleteMovie = (id: string) => {
