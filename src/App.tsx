@@ -27,8 +27,7 @@ function App() {
         <div>
           {show1 ? <MoviesList /> : null}
         </div>
-        <JokList show={show2} />
-
+          {show2 ? <JokList /> : null}
       </>
   );
 }
