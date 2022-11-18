@@ -20,9 +20,10 @@ class OneMovie extends React.Component<Props> {
             <div className='MovieDiv'>
                 <input type="text"
                        className='EditMovie'
-                       value={this.props.movieName}
                        onChange={(e) =>
                            this.props.editMovieName(e.target.value, this.props.id)}
+                       value={this.props.movieName}
+
                 />
                 <button type='button'
                         onClick={() => this.props.deleteMovie(this.props.id)}

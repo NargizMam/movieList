@@ -13,9 +13,6 @@ class AddMovie extends React.Component<Props, State> {
     state = {
         movieName: ''
     }
-
-
-
     shouldComponentUpdate(nextProps: Readonly<Props>) {
         return nextProps !== this.props;
     }
@@ -36,6 +33,9 @@ class AddMovie extends React.Component<Props, State> {
         );
         this.setState({movieName: ''})
     };
+    changeName = (e: React.ChangeEvent<HTMLInputElement>) => {
+        this.setState({movieName: e.target.value})
+    };
 
     render() {
         return (
@@ -44,7 +44,7 @@ class AddMovie extends React.Component<Props, State> {
                     Enter the name of the movie you want to watch <br/>
                     <input type="text"
                            className='InputMovie'
-                           onChange={(event) => this.setState({movieName: event.target.value}) }
+                           onChange={(e) => {this.changeName(e)} }
                     />
                 </label>
                 <button type='submit' className='Delete'
