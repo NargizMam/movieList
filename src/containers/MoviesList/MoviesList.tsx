@@ -31,13 +31,13 @@ class WatchList extends React.Component<{},  State> {
         }));
     };
     editMovie = (id: string, name: string) => {
-        let editName = this.state.movies.map(movie => {
-            if(id === movie.id){
-                this.setState(prev => ({...prev, movie: name}));
-
-        }
-        this.setState(prev => ({...prev,  editName}))
-    })};
+        this.setState(prev => ({
+            ...prev,
+            movies: prev.movies.map(item => item.id === id ? {
+                ...item,
+                movieName: name
+            } : item)
+        }))};
     deleteMovie = (id: string) => {
         this.setState({movies: this.state.movies.filter(movie => movie.id !== id)});
     };
@@ -49,7 +49,7 @@ class WatchList extends React.Component<{},  State> {
             >
                 <OneMovie movieName = {movie.movieName}
                           id = {movie.id}
-                       editMovieName = {() => this.editMovie(movie.id, movie.movieName)}
+                       editMovieName = {(id: string, name: string) => this.editMovie(name, id)}
                        deleteMovie = {() =>this.deleteMovie(movie.id)}
                 />
             </div>

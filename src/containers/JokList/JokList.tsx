@@ -6,8 +6,6 @@ import './JokList.css';
 const url = 'https://api.chucknorris.io/jokes/random';
 
 const JokList = () => {
-    console.log('[Jok] render');
-
     const [jok, setJok] = useState<Jok>({
         created_at: 0,
         id: '',
@@ -28,7 +26,6 @@ const JokList = () => {
 
     return (
         <div className='Joks'>
-
           <article className='JokDiv'>
               <h3>{jok.value}</h3>
               <p>{jok.created_at}</p>
